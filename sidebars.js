@@ -1,4 +1,7 @@
-const dataStructures = ["data-structure/data-unit"];
+const dataStructures = [
+  "data-structure/data-unit",
+  "data-structure/integer-data-representation",
+];
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
