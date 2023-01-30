@@ -2,6 +2,7 @@ const dataStructures = [
   "data-structure/data-unit",
   "data-structure/integer-data-representation",
   "data-structure/real-number-data-representation",
+  "data-structure/character-data-representation",
 ];
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
