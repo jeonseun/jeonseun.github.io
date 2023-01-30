@@ -4,6 +4,9 @@ title: 정수형 데이터 표현
 description: 정수 데이터를 컴퓨터에서 나타내는 방식
 tags:
   - "자료구조"
+last_update:
+  date: 1/21/2023
+  author: jeon seun
 toc_max_heading_level: 4
 ---
 
