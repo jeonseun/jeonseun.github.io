@@ -29,11 +29,13 @@
 
 /* 제목 단락 및 아랫줄 margin 설정 */
 h1,
-h2 {
+h2,
+h3 {
   margin-bottom: 0.5rem !important;
 }
 
 h1 ~ hr,
-h2 ~ hr {
+h2 ~ hr,
+h3 ~ hr {
   margin: 0.5rem 0;
 }
