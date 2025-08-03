@@ -20,7 +20,7 @@ export default function MobileNav() {
   return (
     <div className="md:hidden">
       <Sheet open={open} onOpenChange={toggle}>
-        <SheetTrigger>
+        <SheetTrigger className="align-middle">
           <Menu />
         </SheetTrigger>
 
@@ -28,7 +28,7 @@ export default function MobileNav() {
           <SheetHeader className="px-8">
             <SheetTitle>Contents</SheetTitle>
           </SheetHeader>
-          <nav className="flex flex-col gap-2">
+          <nav className="flex flex-col gap-4">
             <Link href="/" className="py-2 px-8" onClick={toggle}>
               Blog
             </Link>
