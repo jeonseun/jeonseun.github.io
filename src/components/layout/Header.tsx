@@ -5,7 +5,7 @@ import DesktopNav from '@/components/common/DesktopNav';
 
 export function Header() {
   return (
-    <header className="flex items-center justify-between container px-4 py-2 md:px-8 md:py-4 mx-auto">
+    <header className="flex items-center justify-between mx-auto max-w-[1280px] h-12 p-4 md:h-16">
       <h2 className="text-lg font-semibold">
         <Link href="/">우니 Tech</Link>
       </h2>

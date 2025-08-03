@@ -4,11 +4,14 @@ import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import {
   Sheet,
+  SheetClose,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { Button } from '@/components/ui/button';
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -25,20 +28,25 @@ export default function MobileNav() {
         </SheetTrigger>
 
         <SheetContent>
-          <SheetHeader className="px-8">
-            <SheetTitle>Contents</SheetTitle>
+          <SheetHeader>
+            <SheetTitle>Main Menu</SheetTitle>
           </SheetHeader>
           <nav className="flex flex-col gap-4">
-            <Link href="/" className="py-2 px-8" onClick={toggle}>
+            <Link href="/blog" className="px-4 py-2" onClick={toggle}>
               Blog
             </Link>
-            <Link href="/" className="py-2 px-8" onClick={toggle}>
+            <Link href="/about" className="px-4 py-2" onClick={toggle}>
               About
             </Link>
-            <Link href="/" className="py-2 px-8" onClick={toggle}>
+            <Link href="/contact" className="px-4 py-2" onClick={toggle}>
               Contact
             </Link>
           </nav>
+          <SheetFooter>
+            <SheetClose asChild>
+              <Button variant="outline">Close</Button>
+            </SheetClose>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     </div>
