@@ -2,6 +2,7 @@ import Link from 'next/link';
 import ThemeToggle from '@/components/common/ThemeToggle';
 import MobileNav from '@/components/common/MobileNav';
 import DesktopNav from '@/components/common/DesktopNav';
+import { Separator } from '@/components/ui/separator';
 
 export function Header() {
   return (
@@ -9,9 +10,10 @@ export function Header() {
       <h2 className="text-lg font-semibold">
         <Link href="/">우니 Tech</Link>
       </h2>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 h-full">
         <MobileNav />
         <DesktopNav />
+        <Separator orientation="vertical" />
         <ThemeToggle />
       </div>
     </header>
