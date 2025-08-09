@@ -12,6 +12,13 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu';
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -31,17 +38,40 @@ export default function MobileNav() {
           <SheetHeader>
             <SheetTitle>Main Menu</SheetTitle>
           </SheetHeader>
-          <nav className="flex flex-col gap-4">
-            <Link href="/blog" className="px-4 py-2" onClick={toggle}>
-              Blog
-            </Link>
-            <Link href="/about" className="px-4 py-2" onClick={toggle}>
-              About
-            </Link>
-            <Link href="/contact" className="px-4 py-2" onClick={toggle}>
-              Contact
-            </Link>
-          </nav>
+          <NavigationMenu orientation="vertical" className="items-start">
+            <NavigationMenuList className="flex-col px-2 space-y-2">
+              <NavigationMenuItem className="w-full">
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/blog"
+                    onClick={toggle}
+                    className={navigationMenuTriggerStyle()}>
+                    Blog
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem className="w-full">
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/about"
+                    onClick={toggle}
+                    className={navigationMenuTriggerStyle()}>
+                    About
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem className="w-full">
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/contact"
+                    onClick={toggle}
+                    className={navigationMenuTriggerStyle()}>
+                    Contact
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <SheetFooter>
             <SheetClose asChild>
               <Button variant="outline">Close</Button>
