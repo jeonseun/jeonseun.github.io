@@ -14,7 +14,7 @@ const useMounted = () => {
 
 export default function ThemeIcon({ theme }: { theme: string | undefined }) {
   const mounted = useMounted();
-  const iconProps = { className: 'h-4 w-4', strokeWidth: 1.5 };
+  const iconProps = { className: 'h-6 w-6', strokeWidth: 1.5 };
 
   let IconComponent;
 

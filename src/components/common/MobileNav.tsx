@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { PanelRightOpen } from 'lucide-react';
 import {
   Sheet,
   SheetClose,
@@ -17,7 +17,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
 export default function MobileNav() {
@@ -31,7 +30,7 @@ export default function MobileNav() {
     <div className="md:hidden">
       <Sheet open={open} onOpenChange={toggle}>
         <SheetTrigger className="align-middle">
-          <Menu />
+          <PanelRightOpen strokeWidth={1.5} />
         </SheetTrigger>
 
         <SheetContent>
@@ -39,33 +38,24 @@ export default function MobileNav() {
             <SheetTitle>Main Menu</SheetTitle>
           </SheetHeader>
           <NavigationMenu orientation="vertical" className="items-start">
-            <NavigationMenuList className="flex-col px-2 space-y-2">
-              <NavigationMenuItem className="w-full">
+            <NavigationMenuList className="flex-col space-y-2">
+              <NavigationMenuItem className="w-full ml-6">
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="/blog"
-                    onClick={toggle}
-                    className={navigationMenuTriggerStyle()}>
+                  <Link href="/blog" onClick={toggle}>
                     Blog
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem className="w-full">
+              <NavigationMenuItem className="w-full ml-6">
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="/about"
-                    onClick={toggle}
-                    className={navigationMenuTriggerStyle()}>
+                  <Link href="/about" onClick={toggle}>
                     About
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
-              <NavigationMenuItem className="w-full">
+              <NavigationMenuItem className="w-full ml-6">
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="/contact"
-                    onClick={toggle}
-                    className={navigationMenuTriggerStyle()}>
+                  <Link href="/contact" onClick={toggle}>
                     Contact
                   </Link>
                 </NavigationMenuLink>
