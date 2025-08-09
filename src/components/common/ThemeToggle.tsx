@@ -2,18 +2,16 @@
 import { useTheme } from 'next-themes';
 import ThemeIcon from '@/components/common/ThemeIcon';
 
+const THEMES = ['light', 'dark', 'system'];
+
 export default function ThemeToggle() {
-  const themes = ['light', 'dark', 'system'];
   const { theme, setTheme } = useTheme();
 
-  const getCurrentThemeIndex = () => {
-    const index = themes.indexOf(theme || 'system');
-    return index !== -1 ? index : 1;
-  };
-
   const handleThemeChange = () => {
-    const nextMode = (getCurrentThemeIndex() + 1) % themes.length;
-    setTheme(themes[nextMode]);
+    const currentTheme = theme || 'system';
+    const currentIndex = THEMES.indexOf(currentTheme);
+    const nextIndex = (currentIndex + 1) % THEMES.length;
+    setTheme(THEMES[nextIndex]);
   };
 
   return (

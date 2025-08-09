@@ -14,17 +14,25 @@ const useMounted = () => {
 
 export default function ThemeIcon({ theme }: { theme: string | undefined }) {
   const mounted = useMounted();
+  const iconProps = { className: 'h-4 w-4', strokeWidth: 1.5 };
+
+  let IconComponent;
 
   if (!mounted) {
-    return <SunMoon className="h-4 w-4" strokeWidth={1.5} />;
+    IconComponent = SunMoon;
+  } else {
+    switch (theme) {
+      case 'light':
+        IconComponent = Sun;
+        break;
+      case 'dark':
+        IconComponent = Moon;
+        break;
+      default:
+        IconComponent = SunMoon;
+        break;
+    }
   }
 
-  switch (theme) {
-    case 'light':
-      return <Sun className="h-4 w-4" strokeWidth={1.5} />;
-    case 'dark':
-      return <Moon className="h-4 w-4" strokeWidth={1.5} />;
-    default:
-      return <SunMoon className="h-4 w-4" strokeWidth={1.5} />;
-  }
+  return <IconComponent {...iconProps} />;
 }
