@@ -16,15 +16,15 @@ export default function ThemeIcon({ theme }: { theme: string | undefined }) {
   const mounted = useMounted();
 
   if (!mounted) {
-    return <SunMoon />;
+    return <SunMoon className="h-4 w-4" strokeWidth={1.5} />;
   }
 
   switch (theme) {
     case 'light':
-      return <Sun />;
+      return <Sun className="h-4 w-4" strokeWidth={1.5} />;
     case 'dark':
-      return <Moon />;
+      return <Moon className="h-4 w-4" strokeWidth={1.5} />;
     default:
-      return <SunMoon />;
+      return <SunMoon className="h-4 w-4" strokeWidth={1.5} />;
   }
 }

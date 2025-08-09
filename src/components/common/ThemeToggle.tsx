@@ -1,6 +1,5 @@
 'use client';
 import { useTheme } from 'next-themes';
-import { Button } from '@/components/ui/button';
 import ThemeIcon from '@/components/common/ThemeIcon';
 
 export default function ThemeToggle() {
@@ -18,8 +17,8 @@ export default function ThemeToggle() {
   };
 
   return (
-    <Button variant="outline" size="icon" onClick={handleThemeChange}>
+    <div onClick={handleThemeChange} className="cursor-pointer">
       <ThemeIcon theme={theme} />
-    </Button>
+    </div>
   );
 }
