@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { PanelRightOpen } from 'lucide-react';
 import {
   Sheet,
   SheetClose,
@@ -12,6 +12,12 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from '@/components/ui/navigation-menu';
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -24,24 +30,38 @@ export default function MobileNav() {
     <div className="md:hidden">
       <Sheet open={open} onOpenChange={toggle}>
         <SheetTrigger className="align-middle">
-          <Menu />
+          <PanelRightOpen strokeWidth={1.5} />
         </SheetTrigger>
 
         <SheetContent>
           <SheetHeader>
             <SheetTitle>Main Menu</SheetTitle>
           </SheetHeader>
-          <nav className="flex flex-col gap-4">
-            <Link href="/blog" className="px-4 py-2" onClick={toggle}>
-              Blog
-            </Link>
-            <Link href="/about" className="px-4 py-2" onClick={toggle}>
-              About
-            </Link>
-            <Link href="/contact" className="px-4 py-2" onClick={toggle}>
-              Contact
-            </Link>
-          </nav>
+          <NavigationMenu orientation="vertical" className="items-start">
+            <NavigationMenuList className="flex-col space-y-2">
+              <NavigationMenuItem className="w-full ml-6">
+                <NavigationMenuLink asChild>
+                  <Link href="/blog" onClick={toggle}>
+                    Blog
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem className="w-full ml-6">
+                <NavigationMenuLink asChild>
+                  <Link href="/about" onClick={toggle}>
+                    About
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem className="w-full ml-6">
+                <NavigationMenuLink asChild>
+                  <Link href="/contact" onClick={toggle}>
+                    Contact
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <SheetFooter>
             <SheetClose asChild>
               <Button variant="outline">Close</Button>
